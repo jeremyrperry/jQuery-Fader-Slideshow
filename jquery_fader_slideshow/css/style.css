@@ -1,0 +1,10 @@
+/*
+This css (or another similar styling) must be added to ensure the necessary pictures stay hidden.  This step can also be implemented via jQuery
+*/
+
+.slider li{
+	list-style: none;
+	display: none;
+	margin-left: -40px;
+}
+

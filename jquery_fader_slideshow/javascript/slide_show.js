@@ -5,13 +5,14 @@ You are free to utilize this slideshow in any manner on any number of websites t
 */
 $(document).ready(function(){
 $.slide_show = function() {
-		var id = "#slide_" + show_id;
+		var id = '.slider li:('+show_id+')';
 		if(!start){
 			$(previous).fadeOut(3000);
 			$(id).delay(3000).fadeIn(3000);
 		}
-		if (show_id == count){
-			show_id = 1;
+		var check_max = eval(show_id+"+"+1);
+		if (check_max == count){
+			show_id = 0;
 		}
 		else{show_id++;}
 		previous = id;
@@ -26,7 +27,7 @@ $.slide_show = function() {
 	var start = true;
 	var previous = "";
 	var count = $(".slider li").length;
-	var show_id = 1;
-	$('.slider li:first').show();
+	var show_id = 0;
+	$('.slider li:(0)').show();
 	$.slide_show();
 });
